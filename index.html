@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Private Website</title>
+
+<style>
+body {
+  background: #eee8e1;
+  font-family: Georgia, serif;
+  text-align: center;
+  padding-top: 120px;
+}
+
+.box {
+  background: white;
+  width: 320px;
+  margin: auto;
+  padding: 35px;
+  box-shadow: 0 5px 20px #aaa;
+}
+
+h1 {
+  letter-spacing: 4px;
+}
+
+input {
+  padding: 12px;
+  width: 200px;
+  margin: 15px;
+}
+
+button {
+  padding: 12px 25px;
+  cursor: pointer;
+}
+
+#error {
+  color: #a00;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>PRIVATE</h1>
+  <p>Enter the password to continue</p>
+
+  <input type="password" id="password" placeholder="Password">
+  <br>
+
+  <button onclick="checkPassword()">ENTER</button>
+
+  <p id="error"></p>
+</div>
+
+<script>
+function checkPassword() {
+  var password = document.getElementById("password").value;
+
+  if (password === "july9th") {
+    window.location.href = "home.html";
+  } else {
+    document.getElementById("error").innerHTML =
+      "Incorrect password.";
+  }
+}
+</script>
+
+</body>
+</html>
