@@ -1,76 +1,149 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Space</title>
 
-<style>
-body {
-  margin: 0;
-  background: #111;
-  font-family: Arial, sans-serif;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-.page {
-  width: 90%;
-  max-width: 1100px;
-  margin: 30px auto;
-  background: white;
-  border: 8px solid #7b22a8;
-  min-height: 700px;
-}
+    body {
+      margin: 0;
+      background: #111;
+      font-family: Arial, sans-serif;
+    }
 
-.header {
-  background: #eee;
-  padding: 15px;
-  text-align: center;
-  color: #5b147d;
-  font-size: 28px;
-  font-weight: bold;
-}
+    .page {
+      width: 95%;
+      max-width: 1200px;
+      margin: 20px auto;
+      background: #f8f8f8;
+      border: 8px solid #6b2c7a;
+      min-height: 700px;
+    }
 
-.content {
-  display: flex;
-  gap: 15px;
-  padding: 15px;
-}
+    .header {
+      background: #e9dced;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4px solid #6b2c7a;
+    }
 
-.side {
-  width: 120px;
-}
+    .header h1 {
+      margin: 0;
+      color: #5b216c;
+      font-family: Georgia, serif;
+      letter-spacing: 5px;
+    }
 
-.side img {
-  width: 100%;
-  height: 90px;
-  object-fit: cover;
-  margin-bottom: 12px;
-  border: 4px solid #7b22a8;
-}
+    .nav {
+      margin-top: 12px;
+    }
 
-.main {
-  flex: 1;
-  text-align: center;
-}
+    .nav a {
+      display: inline-block;
+      margin: 4px;
+      padding: 7px 14px;
+      background: #6b2c7a;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+    }
 
-.main img {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  border: 5px solid #7b22a8;
-}
+    .gallery {
+      display: grid;
+      grid-template-columns: 130px 130px 1fr 130px 130px;
+      gap: 10px;
+      padding: 15px;
+      align-items: start;
+    }
 
-.arrow {
-  font-size: 35px;
-  color: #7b22a8;
-  cursor: pointer;
-  margin: 15px;
-}
+    .side {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-.footer {
-  text-align: center;
-  padding: 15px;
-  color: #777;
-}
-</style>
+    .photo {
+      width: 100%;
+      height: 95px;
+      object-fit: cover;
+      border: 4px solid #6b2c7a;
+      background: #ddd;
+    }
+
+    .main {
+      text-align: center;
+      padding: 5px;
+    }
+
+    .video-box {
+      width: 100%;
+      background: #111;
+      border: 6px solid #6b2c7a;
+      padding: 5px;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      max-height: 520px;
+    }
+
+    .arrows {
+      margin: 12px 0;
+    }
+
+    .arrow {
+      border: none;
+      background: #6b2c7a;
+      color: white;
+      padding: 10px 20px;
+      margin: 0 8px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .caption {
+      color: #5b216c;
+      font-family: Georgia, serif;
+      font-size: 18px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 3px solid #6b2c7a;
+      color: #777;
+      font-size: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .gallery {
+        grid-template-columns: 70px 1fr 70px;
+      }
+
+      .side:nth-child(2) {
+        display: none;
+      }
+
+      .side {
+        gap: 8px;
+      }
+
+      .photo {
+        height: 70px;
+        border-width: 3px;
+      }
+
+      .page {
+        width: 98%;
+        border-width: 5px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -78,41 +151,122 @@ body {
 <div class="page">
 
   <div class="header">
-    MY SPACE
+    <h1>MY SPACE</h1>
+
+    <div class="nav">
+      <a href="#">HOME</a>
+      <a href="#">PHOTOS</a>
+      <a href="#">VIDEOS</a>
+      <a href="#">ABOUT</a>
+    </div>
   </div>
 
-  <div class="content">
+  <div class="gallery">
 
+    <!-- LEFT PHOTOS -->
     <div class="side">
-      <img src="https://placehold.co/300x200?text=Photo">
-      <img src="https://placehold.co/300x200?text=Photo">
-      <img src="https://placehold.co/300x200?text=Photo">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+1">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+2">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+3">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+4">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+5">
     </div>
 
+    <div class="side">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+6">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+7">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+8">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+9">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+10">
+    </div>
+
+    <!-- BIG VIDEO -->
     <div class="main">
-      <span class="arrow">◀</span>
 
-      <img src="https://placehold.co/800x500?text=My+Photo">
+      <div class="video-box">
+        <video id="mainVideo" controls>
+          <source id="videoSource" src="VIDEO1.mp4" type="video/mp4">
+        </video>
+      </div>
 
-      <span class="arrow">▶</span>
+      <div class="arrows">
+        <button class="arrow" onclick="previousVideo()">◀</button>
+        <button class="arrow" onclick="nextVideo()">▶</button>
+      </div>
 
-      <h2>Welcome to my space</h2>
-      <p>A little place for my photos, memories and everything I love.</p>
+      <div class="caption" id="caption">
+        My Videos
+      </div>
+
+    </div>
+
+    <!-- RIGHT PHOTOS -->
+    <div class="side">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+11">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+12">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+13">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+14">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+15">
     </div>
 
     <div class="side">
-      <img src="https://placehold.co/300x200?text=Photo">
-      <img src="https://placehold.co/300x200?text=Photo">
-      <img src="https://placehold.co/300x200?text=Photo">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+16">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+17">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+18">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+19">
+      <img class="photo" src="https://placehold.co/300x200?text=Photo+20">
     </div>
 
   </div>
 
   <div class="footer">
-    © My Space
+    My Space ♡
   </div>
 
 </div>
+
+<script>
+
+  const videos = [
+    "VIDEO1.mp4",
+    "VIDEO2.mp4",
+    "VIDEO3.mp4",
+    "VIDEO4.mp4"
+  ];
+
+  let currentVideo = 0;
+
+  function showVideo() {
+    const video = document.getElementById("mainVideo");
+    const source = document.getElementById("videoSource");
+
+    video.pause();
+    source.src = videos[currentVideo];
+
+    video.load();
+  }
+
+  function nextVideo() {
+    currentVideo++;
+
+    if (currentVideo >= videos.length) {
+      currentVideo = 0;
+    }
+
+    showVideo();
+  }
+
+  function previousVideo() {
+    currentVideo--;
+
+    if (currentVideo < 0) {
+      currentVideo = videos.length - 1;
+    }
+
+    showVideo();
+  }
+
+</script>
 
 </body>
 </html>
